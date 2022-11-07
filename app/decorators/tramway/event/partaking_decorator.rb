@@ -11,6 +11,7 @@ class Tramway::Event::PartakingDecorator < ::Tramway::Core::ApplicationDecorator
     end
   end
 
+  delegate_attributes :position
   decorate_association :part
 
   def name

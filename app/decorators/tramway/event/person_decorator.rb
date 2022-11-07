@@ -7,7 +7,7 @@ class Tramway::Event::PersonDecorator < ::Tramway::Core::ApplicationDecorator
     end
   end
 
-  decorate_association :sections
+  decorate_association :partakings
 
   def name
     "#{object.first_name} #{object.last_name}"
