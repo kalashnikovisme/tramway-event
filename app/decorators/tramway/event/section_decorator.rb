@@ -11,7 +11,7 @@ class Tramway::Event::SectionDecorator < ::Tramway::Landing::BlockTypes::Feature
     end
   end
 
-  delegate_attributes :description, :created_at
+  delegate_attributes :description, :created_at, :photo
   decorate_association :event
   decorate_association :partakings, as: :part, decorator: Tramway::Event::PartakingFeatureDecorator
 
