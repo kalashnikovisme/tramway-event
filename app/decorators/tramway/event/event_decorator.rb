@@ -19,7 +19,7 @@ class Tramway::Event::EventDecorator < ::Tramway::Core::ApplicationDecorator
     end
   end
 
-  delegate :title, to: :object
+  delegate_attributes :title, :begin_date
   decorate_associations :participants, :partnerships, :organizations
   decorate_association :participant_form_fields, as: :event
   decorate_association :sections, as: :event
