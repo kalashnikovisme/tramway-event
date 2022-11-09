@@ -14,7 +14,7 @@ class Tramway::Event::Event < ::Tramway::Core::ApplicationRecord
   has_many :participants, class_name: 'Tramway::Event::Participant'
   has_many :participant_form_fields, -> { order(position: :asc) }, class_name: 'Tramway::Event::ParticipantFormField'
   has_many :sections, class_name: 'Tramway::Event::Section'
-  has_many :partakings, as: :part, class_name: 'Tramway::Event::Partaking'
+  has_many :partakings, as: :part, class_name: 'Tramway::Event::Partaking', dependent: :destroy
   has_many :partnerships, class_name: 'Tramway::Partner::Partnership', as: :partner
   has_many :organizations, as: :partners, through: :partnerships, class_name: 'Tramway::Partner::Organization'
   has_many :actions, -> { order(id: :asc) }, class_name: 'Tramway::Event::Action'
