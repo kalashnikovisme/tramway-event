@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Tramway::Event::EventDecorator < ::Tramway::Core::ApplicationDecorator
+class Tramway::Event::EventDecorator < ::Tramway::ApplicationDecorator
   class << self
     def collections
       [:all]

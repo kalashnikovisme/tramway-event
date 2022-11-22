@@ -2,7 +2,7 @@
 
 require 'securerandom'
 
-class Admin::Tramway::Event::ParticipantForm < ::Tramway::Core::ApplicationForm
+class Admin::Tramway::Event::ParticipantForm < ::Tramway::ApplicationForm
   properties :comment
   association :event
 

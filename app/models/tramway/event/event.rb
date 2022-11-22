@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Tramway::Event::Event < ::Tramway::Core::ApplicationRecord
+class Tramway::Event::Event < ::Tramway::ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   validate :check_dimensions

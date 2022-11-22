@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Tramway::Event::ParticipantDecorator < ::Tramway::Core::ApplicationDecorator
+class Tramway::Event::ParticipantDecorator < ::Tramway::ApplicationDecorator
   include HTMLTagsHelpers
   class << self
     def collections

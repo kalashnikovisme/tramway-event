@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Tramway::Event::Partaking < ::Tramway::Core::ApplicationRecord
+class Tramway::Event::Partaking < ::Tramway::ApplicationRecord
   belongs_to :part, polymorphic: true
   enumerize :part_type, in: ['Tramway::Event::Event', 'Tramway::Event::Section']
 

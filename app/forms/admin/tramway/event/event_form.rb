@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Admin::Tramway::Event::EventForm < ::Tramway::Core::ApplicationForm
+class Admin::Tramway::Event::EventForm < ::Tramway::ApplicationForm
   properties :title, :description, :begin_date, :end_date, :photo, :reach,
     :request_collecting_begin_date, :request_collecting_end_date, :short_description
 
