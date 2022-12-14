@@ -43,7 +43,7 @@ class Tramway::Event::EventDecorator < ::Tramway::ApplicationDecorator
   end
 
   def participants_list
-    content_tag :a, href: ::Tramway::Admin::Engine.routes.url_helpers.records_path(model: ::Tramway::Event::Participant, filter: { event_id_eq: object.id }) do
+    content_tag :a, href: ::Tramway::Engine.routes.url_helpers.records_path(model: ::Tramway::Event::Participant, filter: { event_id_eq: object.id }) do
       I18n.t('helpers.links.open')
     end
   end

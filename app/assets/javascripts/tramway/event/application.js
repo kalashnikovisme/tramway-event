@@ -1,2 +1,2 @@
-//= require tramway/core/application
+//= require tramway/application
 //= require_tree .
