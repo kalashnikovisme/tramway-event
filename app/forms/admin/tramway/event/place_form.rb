@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Admin::Tramway::Event::PlaceForm < Tramway::Core::ApplicationForm
+class Admin::Tramway::Event::PlaceForm < Tramway::ApplicationForm
   properties :title, :description, :coordinates, :photo, :city
 
   def initialize(object)

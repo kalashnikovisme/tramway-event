@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Tramway::Event::ParticipantDecorator < ::Tramway::Core::ApplicationDecorator
+class Tramway::Event::ParticipantDecorator < ::Tramway::ApplicationDecorator
   include HTMLTagsHelpers
   class << self
     def collections
@@ -13,7 +13,7 @@ class Tramway::Event::ParticipantDecorator < ::Tramway::Core::ApplicationDecorat
     delegate :human_participation_state_event_name, to: :model_class
 
     def show_attributes
-      %i[id event values state created_at updated_at participation_state comment]
+      %i[id event values created_at updated_at participation_state comment]
     end
   end
 
@@ -94,10 +94,6 @@ class Tramway::Event::ParticipantDecorator < ::Tramway::Core::ApplicationDecorat
         end)
       end
     end
-  end
-
-  def state
-    state_machine_view object, :state
   end
 
   def created_at

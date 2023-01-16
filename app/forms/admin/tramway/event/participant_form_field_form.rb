@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Admin::Tramway::Event::ParticipantFormFieldForm < ::Tramway::Core::ExtendedApplicationForm
+class Admin::Tramway::Event::ParticipantFormFieldForm < ::Tramway::ExtendedApplicationForm
   properties :title, :description, :field_type, :options, :position, :list_field, :presence_field, :select_options
   association :event
 

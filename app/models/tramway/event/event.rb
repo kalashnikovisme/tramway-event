@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Tramway::Event::Event < ::Tramway::Core::ApplicationRecord
+class Tramway::Event::Event < Tramway::ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   validate :check_dimensions
@@ -11,13 +11,13 @@ class Tramway::Event::Event < ::Tramway::Core::ApplicationRecord
     end
   end
 
-  has_many :participants, class_name: 'Tramway::Event::Participant'
-  has_many :participant_form_fields, -> { order(position: :asc) }, class_name: 'Tramway::Event::ParticipantFormField'
-  has_many :sections, class_name: 'Tramway::Event::Section'
+  has_many :participants, class_name: 'Tramway::Event::Participant', dependent: :destroy
+  has_many :participant_form_fields, -> { order(position: :asc) }, class_name: 'Tramway::Event::ParticipantFormField', dependent: :destroy
+  has_many :sections, class_name: 'Tramway::Event::Section', dependent: :destroy
   has_many :partakings, as: :part, class_name: 'Tramway::Event::Partaking', dependent: :destroy
-  has_many :partnerships, class_name: 'Tramway::Partner::Partnership', as: :partner
+  has_many :partnerships, class_name: 'Tramway::Partner::Partnership', as: :partner, dependent: :destroy
   has_many :organizations, as: :partners, through: :partnerships, class_name: 'Tramway::Partner::Organization'
-  has_many :actions, -> { order(id: :asc) }, class_name: 'Tramway::Event::Action'
+  has_many :actions, -> { order(id: :asc) }, class_name: 'Tramway::Event::Action', dependent: :destroy
   has_and_belongs_to_many :places
 
   enumerize :reach, default: :open, in: %i[open closed]

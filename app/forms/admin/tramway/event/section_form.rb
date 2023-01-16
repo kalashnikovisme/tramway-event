@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Admin::Tramway::Event::SectionForm < ::Tramway::Core::ApplicationForm
+class Admin::Tramway::Event::SectionForm < ::Tramway::ApplicationForm
   properties :event, :title, :description, :photo, :icon, :position
   association :event
 
