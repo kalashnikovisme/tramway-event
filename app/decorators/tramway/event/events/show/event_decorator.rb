@@ -45,10 +45,10 @@ class Tramway::Event::Events::Show::EventDecorator < ::Tramway::ApplicationDecor
 
   def responsible_person
     {
-      title: Tramway::User::UserDecorator.decorate(object.creator)&.name,
+      title: Tramway::UserDecorator.decorate(object.creator)&.name,
       phone: (object.creator.phone if object.creator&.phone&.present?),
       email: (object.creator.email if object.creator&.email&.present?),
-      social_networks: (object.creator.social_networks.active if object.creator.respond_to?(:social_networks))
+      social_networks: (object.creator.social_networks if object.creator.respond_to?(:social_networks))
     }
   end
 
