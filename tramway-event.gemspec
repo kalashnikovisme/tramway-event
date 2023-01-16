@@ -11,12 +11,12 @@ Gem::Specification.new do |s|
   s.version     = Tramway::Event::VERSION
   s.authors     = ['Pavel Kalashnikov']
   s.email       = ['kalashnikovisme@gmail.com']
-  s.homepage    = 'https://github.com/ulmic/tramway-event'
+  s.homepage    = 'https://github.com/kalashnikovisme/tramway-event'
   s.summary     = 'Rails engine for events'
   s.description = 'Rails engine for events'
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
-  s.add_dependency 'configus'
+  s.add_dependency 'tramway'
 end

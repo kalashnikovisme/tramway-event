@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Tramway::Event::Action < Tramway::Core::ApplicationRecord
+class Tramway::Event::Action < Tramway::ApplicationRecord
   belongs_to :event, class_name: 'Tramway::Event::Event'
 
   aasm :action_state, column: :action_state do

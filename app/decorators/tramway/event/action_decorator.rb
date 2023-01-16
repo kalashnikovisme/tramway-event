@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Tramway::Event::ActionDecorator < Tramway::Core::ApplicationDecorator
+class Tramway::Event::ActionDecorator < Tramway::ApplicationDecorator
   class << self
     delegate :human_action_state_event_name, to: :model_class
     delegate :human_attribute_name, to: :model_class

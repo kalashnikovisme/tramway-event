@@ -39,7 +39,7 @@ Versions table
 
 *config/initializers/tramway.rb*
 ```ruby
-Tramway::Admin.set_available_models ::Tramway::Event::Event, ::Tramway::Event::ParticipantFormField, ::Tramway::Event::Participant, project: #{project_which_you_used_in_the_application}
+Tramway.set_available_models ::Tramway::Event::Event, ::Tramway::Event::ParticipantFormField, ::Tramway::Event::Participant, project: #{project_which_you_used_in_the_application}
 ```
 
 #### 6. Add events routes to the app

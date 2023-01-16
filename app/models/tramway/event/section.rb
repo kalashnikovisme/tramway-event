@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Tramway::Event::Section < ::Tramway::Core::ApplicationRecord
+class Tramway::Event::Section < ::Tramway::ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   belongs_to :event, class_name: 'Tramway::Event::Event'

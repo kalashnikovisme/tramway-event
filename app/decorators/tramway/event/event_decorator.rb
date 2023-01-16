@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-class Tramway::Event::EventDecorator < ::Tramway::Core::ApplicationDecorator
+class Tramway::Event::EventDecorator < ::Tramway::ApplicationDecorator
   class << self
     def collections
       [:all]
     end
 
     def show_attributes
-      %i[title duration events_link state created_at photo request_collecting_duration description participants_list]
+      %i[title duration events_link created_at photo request_collecting_duration description participants_list]
     end
 
     def show_associations
@@ -43,7 +43,7 @@ class Tramway::Event::EventDecorator < ::Tramway::Core::ApplicationDecorator
   end
 
   def participants_list
-    content_tag :a, href: ::Tramway::Admin::Engine.routes.url_helpers.records_path(model: ::Tramway::Event::Participant, filter: { event_id_eq: object.id }) do
+    content_tag :a, href: ::Tramway::Engine.routes.url_helpers.records_path(model: ::Tramway::Event::Participant, filter: { event_id_eq: object.id }) do
       I18n.t('helpers.links.open')
     end
   end
@@ -92,8 +92,5 @@ class Tramway::Event::EventDecorator < ::Tramway::Core::ApplicationDecorator
     end
   end
 
-  def state
-    state_machine_view object, :state
-  end
   alias tagline duration
 end

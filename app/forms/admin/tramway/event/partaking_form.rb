@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Admin::Tramway::Event::PartakingForm < ::Tramway::Core::ApplicationForm
+class Admin::Tramway::Event::PartakingForm < ::Tramway::ApplicationForm
   properties :part_id, :part_type, :person_id, :position
   associations :person, :part
 

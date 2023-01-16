@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Admin::Tramway::Event::ActionForm < Tramway::Core::ApplicationForm
+class Admin::Tramway::Event::ActionForm < Tramway::ApplicationForm
   properties :title, :action_state_event, :deadline
 
   association :event
