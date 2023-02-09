@@ -3,6 +3,10 @@
 class Tramway::Event::Participant < ::Tramway::ApplicationRecord
   belongs_to :event, class_name: 'Tramway::Event::Event'
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["event_id"]
+  end
+
   aasm :participation_state, column: :participation_state do
     state :requested, initial: true
     state :prev_approved
